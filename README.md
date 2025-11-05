@@ -18,32 +18,32 @@ standard_init_linux.go:211: exec user process caused "exec format error"
 
 $ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
-$ docker run --rm -t arm64v8/ubuntu uname -m
+$ docker run --rm -t --platform linux/arm64v8 arm64v8/ubuntu uname -m
 aarch64
 ```
 
 It works on many architectures and OS container images.
 
 ```
-$ docker run --rm -t arm32v6/alpine uname -m
+$ docker run --rm -t --platform linux/arm32v6 arm32v6/alpine uname -m
 armv7l
 
-$ docker run --rm -t ppc64le/debian uname -m
+$ docker run --rm -t --platform linux/ppc64le ppc64le/debian uname -m
 ppc64le
 
-$ docker run --rm -t s390x/ubuntu uname -m
+$ docker run --rm -t --platform linux/s390x s390x/ubuntu uname -m
 s390x
 
-$ docker run --rm -t arm64v8/fedora uname -m
+$ docker run --rm -t --platform linux/arm64v8 arm64v8/fedora uname -m
 aarch64
 
-$ docker run --rm -t arm32v7/centos uname -m
+$ docker run --rm -t --platform linux/arm32v7 arm32v7/centos uname -m
 armv7l
 
-$ docker run --rm -t ppc64le/busybox uname -m
+$ docker run --rm -t --platform linux/ppc64le ppc64le/busybox uname -m
 ppc64le
 
-$ docker run --rm -t i386/ubuntu uname -m
+$ docker run --rm -t --platform linux/i386 i386/ubuntu uname -m
 x86_64
 ```
 
